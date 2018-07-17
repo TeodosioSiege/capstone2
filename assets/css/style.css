@@ -1,0 +1,102 @@
+/*Personal*/
+
+ *{
+ 	box-sizing:border-box;
+ 	padding: 0;
+ 	margin: 0;
+ 	color: hsl(350, 70%, 90%);
+ }
+
+.thumbnail img {
+	width: 350px !important;
+	height: 250px !important;
+	object-fit: contain;
+}
+
+body>p, .glyphicon, button#close {
+	color: hsl(350, 70%, 90%) !important;
+	}
+
+h1, footer>p {
+	color: /*hsl(350, 70%, 65%)*/hsl(350, 70%, 25%);
+	background: linear-gradient(to bottom right, hsl(55, 75%, 85%),hsl(55, 75%, 40%));
+	padding: 25px 0;
+	}
+
+h2, strong {
+	color: /*hsl(350, 70%, 25%)*/#fff;
+	}
+
+body {
+	background-color: hsl(350, 70%, 20%);
+	color: hsl(350, 70%, 90%);
+  }
+
+footer {
+	position: absolute;
+	bottom: 1;
+	 width: 100%;
+	  }
+
+footer>p {
+ text-align: center;
+ }
+
+ .container {
+  	min-height: 720px;
+  }
+
+h1 {
+	font-family: serif;
+	 }
+
+.modal-header {
+	background-color: hsl(350, 70%, 20%) !important;
+	color: hsl(350, 70%, 90%);
+}
+
+form label {
+	color: black;
+}
+ 
+
+
+
+/* tab style*/
+
+.tab {
+	overflow: hidden;
+
+    border: 1px solid #ccc;
+
+    background-color: hsl(350, 70%, 20%);
+}
+
+ /* tab buttons */
+
+.tab button {
+
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+     color: hsl(350, 70%, 90%);
+}
+
+/* tab hover*/
+.tab button:hover {
+	background-color: hsl(350, 70%, 50%);
+}
+
+/* tab content*/
+
+.tabcontent {
+
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}

@@ -6,17 +6,23 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="index.php">Music Store</a>
+			<a class="navbar-brand musicore" href="index.php">&#9835;Musicore</a>
 		</div><!-- end navbar-header-->
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="index.php">Home</a></li>
+				<li <?php if (stripos($_SERVER['REQUEST_URI'],'index.php') !== false) {echo 'class="active"';} ?>><a href="index.php">Home</a></li>
 				<?php if ($_SESSION["role"] == "User") {
-					echo "<li><a href='order.php'>Orders</a></li>";
+					echo "<li ";
+					if (stripos($_SERVER['REQUEST_URI'],'order.php') !== false) {echo 'class="active"';}
+					echo "><a href='order.php'>Orders</a></li>";
 				} ?>	<!-- different page for different role	 -->		
 				<?php if ($_SESSION["role"] == "Admin") {
-					echo "<li><a href='updateProducts.php'>Update Products</a></li>
-						  <li><a href='mngOrder.php'>Manage Orders</a></li>
+					echo "<li ";
+					if (stripos($_SERVER['REQUEST_URI'],'updateProducts.php') !== false) {echo 'class="active"';}
+					echo "><a href='updateProducts.php'>Update Products</a></li>
+						  <li ";
+					if (stripos($_SERVER['REQUEST_URI'],'mngOrder.php') !== false) {echo 'class="active"';}
+					echo "><a href='mngOrder.php'>Manage Orders</a></li>
 					";
 				} ?>
 				
@@ -26,7 +32,7 @@
 					$name = $_SESSION['name'];
 					echo "<li><a href=#>Welcome $name !</a></li>";
 				} ?>
-				<li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Shop <?php 
+				<li <?php if (stripos($_SERVER['REQUEST_URI'],'cart.php') !== false) {echo 'class="active"';} ?> ><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Shop <?php 
         		if (isset($_SESSION["item_count"])) {
 					echo "<span class='badge'>".$_SESSION["item_count"]."</span>";
        			 }?></a></li>
@@ -57,7 +63,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 			 	<button type="button" class="close" data-dismiss="modal" id="close">&times;</button>
-				<h4 class="modal-title">Website Name</h4>
+				<h4 class="modal-title musicore">&#9835; Musicore</h4>
 			</div><!-- end modal header -->
 			<div class="modal-body">
 				<div class="tab">
@@ -87,8 +93,7 @@
 							</label>
 							<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 							<div class="clearfix">
-								<button type="button" class="cancelbtn">Cancel</button>
-								<button type="submit" class="signupbtn">Sign Up</button>
+								<button type="submit" class="btn btn-primary">Sign Up</button>
 							</div><!-- end clearfix -->
 							</form>
 						</div><!-- end container-fluid -->
@@ -97,16 +102,13 @@
 						<!--log in form -->
 						<form action="action/action_users.php" method="POST">
 							<div class="container-fluid">
-								<h1>Log in</h1>
+								<h3>Log in</h3><hr>
 								<label for="email"><b>Email</b></label>
-								<input type="text" placeholder="Enter Username" name="email" required class="form-control">
+								<input type="text" placeholder="Enter Username" name="email" required class="form-control"><div class="form-group">
 								<label for="psw"><b>Password</b></label>
-								<input type="password" placeholder="Enter Password" name="psw" required class="form-control">
-								<button type="submit">Login</button>
+								<input type="password" placeholder="Enter Password" name="psw" required class="form-control"></div><div class="form-group">
+								<button type="submit" class="btn btn-primary">Login</button></div>
 							</div><!-- end container-fluid -->
-							<div class="container-fluid" style="background-color:#f1f1f1">
-								<button type="button" class="cancelbtn">Cancel</button>
-							</div>
 						</form>
 					</div><!-- end login -->
 			</div><!-- end modal-body -->

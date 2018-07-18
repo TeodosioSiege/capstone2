@@ -4,7 +4,8 @@
  	box-sizing:border-box;
  	padding: 0;
  	margin: 0;
- 	color: hsl(350, 70%, 90%);
+ 	/*color: hsl(350, 70%, 90%);*/
+ 	color: hsl(55, 75%, 85%) !important;
  }
 
 .thumbnail img {
@@ -13,8 +14,8 @@
 	object-fit: contain;
 }
 
-body>p, .glyphicon, button#close {
-	color: hsl(350, 70%, 90%) !important;
+body>p, button#close {
+	color: hsl(55, 75%, 85%) !important;
 	}
 
 h1, footer>p {
@@ -55,12 +56,19 @@ h1 {
 	color: hsl(350, 70%, 90%);
 }
 
+.modal-body {
+	background-color: #111;
+	color: #ddc;
+}
+
 form label {
 	color: black;
 }
  
 
-
+.thumbnail {
+	background-color: #111;
+}
 
 /* tab style*/
 
@@ -72,7 +80,18 @@ form label {
     background-color: hsl(350, 70%, 20%);
 }
 
+#Sign-Up h3,#Sign-Up  p,#Sign-Up  label {
+	color: #ddc !important;
+}
+
  /* tab buttons */
+.btn-primary {
+	background-color: hsl(350, 70%, 20%) !important;
+}
+
+input {
+	color: #555 !important;
+}
 
 .tab button {
 
@@ -99,4 +118,177 @@ form label {
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
+}
+
+.musicore {
+	font-family: 'Lobster', cursive !important;
+}
+.collections {
+	font-family: 'Kaushan Script', cursive !important;
+}
+
+nav li a,nav li a .glyphicon {
+	transition: 0.4s;
+	color: hsl(55, 75%, 85%) !important;
+	background: black !important;
+}
+
+nav li a:hover, nav li a:hover .glyphicon {
+	color: black !important;
+	background: linear-gradient(to bottom right, hsl(55, 75%, 85%),hsl(55, 75%, 40%)) !important;
+}
+
+
+
+/*accordion style*/
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans) !important;
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700) !important;
+h1 {
+  text-align: center !important;
+  font-family: Montserrat,sans-serif !important;
+  color: #333 !important;
+}
+
+.accordion {
+  width: 100% !important;
+  max-width: 1080px !important;
+  height: 250px !important;
+  overflow: hidden !important;
+  margin: 2px auto !important;
+}
+.accordion ul {
+  width: 100% !important;
+  display: table !important;
+  table-layout: fixed !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.accordion ul li {
+  display: table-cell !important;
+  vertical-align: bottom !important;
+  position: relative !important;
+  width: 16.666% !important;
+  height: 250px !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  transition: all 500ms ease !important;
+}
+.accordion ul li div {
+  display: block !important;
+  overflow: hidden !important;
+  width: 100% !important;
+}
+.accordion ul li div a {
+  display: block !important;
+  height: 250px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 3 !important;
+  vertical-align: bottom !important;
+  padding: 15px 20px !important;
+  box-sizing: border-box !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  font-family: Open Sans, sans-serif !important;
+  transition: all 200ms ease !important;
+}
+.accordion ul li div a * {
+  opacity: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  text-overflow: ellipsis !important;
+  position: relative !important;
+  z-index: 5 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  -webkit-transform: translateX(-20px) !important;
+  transform: translateX(-20px) !important;
+  -webkit-transition: all 400ms ease !important;
+  transition: all 400ms ease !important;
+}
+.accordion ul li div a h2 {
+  font-family: Montserrat,sans-serif !important;
+  text-overflow: clip !important;
+  font-size: 24px !important;
+  text-transform: uppercase !important;
+  margin-bottom: 2px !important;
+  top: 160px !important;
+}
+.accordion ul li div a p {
+  top: 160px !important;
+  font-size: 13.5px !important;
+}
+.accordion ul li:nth-child(1) {
+  background-image: url("../img/brass.jpg") !important;
+}
+.accordion ul li:nth-child(2) {
+  background-image: url("../img/keyboard.jpg") !important;
+}
+.accordion ul li:nth-child(3) {
+  background-image: url("../img/percussion.jpg") !important;
+}
+.accordion ul li:nth-child(4) {
+  background-image: url("../img/strings-bowed.jpg") !important;
+}
+.accordion ul li:nth-child(5) {
+  background-image: url("../img/strings-plucked.jpg") !important;
+}
+.accordion ul li:nth-child(6) {
+  background-image: url("../img/woodwind.jpg") !important;
+}
+.accordion ul:hover li, .accordion ul:focus-within li {
+  width: 8% !important;
+}
+.accordion ul li:focus {
+  outline: none !important;
+}
+.accordion ul:hover li:hover,
+.accordion ul li:focus, .accordion ul:focus-within li:focus {
+  width: 60% !important;
+}
+.accordion ul:hover li:hover a,
+.accordion ul li:focus a, .accordion ul:focus-within li:focus a {
+  background: rgba(0, 0, 0, 0.4) !important;
+}
+.accordion ul:hover li:hover a *,
+.accordion ul li:focus a *, .accordion ul:focus-within li:focus a * {
+  opacity: 1 !important;
+  -webkit-transform: translateX(0) !important;
+  transform: translateX(0) !important;
+}
+.accordion ul:hover li {
+  width: 8%  !important;
+}
+.accordion ul:hover li a * {
+  opacity: 0  !important;
+}
+.accordion ul:hover li:hover {
+  width: 60%  !important;
+}
+.accordion ul:hover li:hover a {
+  background: rgba(0, 0, 0, 0.4) !important;
+}
+.accordion ul:hover li:hover a * {
+  opacity: 1  !important;
+  -webkit-transform: translateX(0) !important;
+  transform: translateX(0) !important;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    margin: 0 !important;
+  }
+
+  .accordion {
+    height: auto !important;
+  }
+  .accordion ul li, .accordion ul li:hover, .accordion ul:hover li, .accordion ul:hover li:hover {
+    position: relative !important;
+    display: table !important;
+    table-layout: fixed !important;
+    width: 100% !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
 }

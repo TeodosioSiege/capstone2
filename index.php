@@ -51,12 +51,67 @@ if (isset($_GET["logX"])) {
 	</div>";
 } ?>
 
-
-
 <div class="container-fluid">
-<h1 class=text-primary>Catalogue</h1>
+
+<div class="accordion">
+  <ul>
+    <li tabindex="1" onclick='showCategories(1)'>
+      <div>
+        <a href="#">
+          <h2>Brass</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        </a>
+      </div>
+    </li>
+    <li tabindex="2" onclick='showCategories(2)'>
+      <div>
+        <a href="#">
+          <h2>Keyboard</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        </a>
+      </div>
+    </li>
+    <li tabindex="3" onclick='showCategories(3)'>
+      <div>
+        <a href="#">
+          <h2>Percussion</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        </a>
+      </div>
+    </li>
+    <li tabindex="4" onclick='showCategories(4)'>
+      <div>
+        <a href="#">
+          <h2>Strings(Bowed)</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        </a>
+      </div>
+    </li>
+    <li tabindex="5" onclick='showCategories(5)'>
+      <div>
+        <a href="#">
+          <h2>Strings(Plucked)</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        </a>
+      </div>
+    </li>
+    <li tabindex="6" onclick='showCategories(6)'>
+      <div>
+        <a href="#">
+          <h2>Woodwind</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+
+
+<h1 class="collections">COLLECTIONS</h1>
 <div class="row">
-	<div class="col-md-2">
+	<div class="col-md-2" id="catNames">
 <?php 
 include "includes/db_config.php";
 $sql = "SELECT * FROM categories";
@@ -72,7 +127,7 @@ if (mysqli_num_rows($result) > 0) {
 echo "$data";
  ?>
 	</div><!-- end col-md-2 --> 
-	<div class="col-md-10" id="products">
+	<div class="col-md-12" id="products">
 
 <?php 
 include "includes/db_config.php";
@@ -104,5 +159,18 @@ if (mysqli_num_rows($result) > 0) {
 </div><!-- end row --> 
 </div><!-- end container -->
 <!-- end  --> 
+<script>
+$(document).ready(function(){
+    if (window.matchMedia("(min-width: 600px)").matches){
+    	$("#catNames").hide();
+    }
+    if (window.matchMedia("(max-width: 599px)").matches){
+    	$(".accordion").hide();
+    	$("#products").css("margin-top","5px");
+    }
+});	
+
+</script>
+
 <?php include "includes/bottom.php"; ?>
 

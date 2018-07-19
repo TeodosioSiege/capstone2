@@ -17,7 +17,7 @@ if(!isset($_SESSION["item_count"])){
 ?>
 
 <?php include "includes/top.php"; ?>
-<?php include "includes/nav.php"; ?>
+
 
 <?php 
 include "includes/db_config.php";

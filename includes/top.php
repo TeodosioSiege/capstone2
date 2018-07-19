@@ -25,3 +25,6 @@
 
 </head>
 <body>
+<?php include "includes/nav.php"; ?>
+<div class="container-fluid" id="wrapper">
+	<div class="inner-wrapper">

@@ -9,7 +9,7 @@ else if ($_SESSION['name'] !== 'Admin') {
   ?>
 
 <?php include "includes/top.php"; ?>
-<?php include "includes/nav.php"; ?>
+
 <?php 
 if (isset($_GET["insert"])) {
 	echo "<div class='alert alert-success'>
@@ -34,10 +34,9 @@ include "includes/db_config.php";
 echo "
 <hr>
  <div align='right'><button class='btn btn-success btn-lg text-right'  data-toggle='modal' data-target='#Modal'><span class='glyphicon glyphicon-plus'></span> Add Product</button></div>
-<hr><div class='container'><table class='table table-striped table-responsive'>
+<hr><div class='container table-responsive'><table class='table table-striped table'>
     <thead>
       <tr>
-        <th>Product ID</th>
         <th>Product Name</th>
         <th>Price</th>
         <th>Category</th>
@@ -55,7 +54,7 @@ if (mysqli_num_rows($result) > 0) {
 	while ($row = mysqli_fetch_assoc($result)) {
 		$category = array("Brass","Keyboard","Percussion","Strings(Bowed)","Strings(Plucked)","Woodwind");
 		$cat = $row['category_id'] -1;
-		echo "<tr><td>$row[id]</td><td>$row[product_name]</td><td>$row[price]</td><td>$category[$cat]</td><td>$row[image]</td><td>$row[product_desc]</td>
+		echo "<tr><td>$row[product_name]</td><td>$row[price]</td><td>$category[$cat]</td><td>$row[image]</td><td>$row[product_desc]</td>
 		<td><a onClick='return confirm(\"Do you want to delete this item?\");' href='action/delProduct.php?id=$row[id]' class='btn btn-danger' ><i class='glyphicon glyphicon-trash'></i></a>
 		<a href='#'class='btn btn-info' data-toggle='modal' data-target='#Modal_$row[id]'><i class='glyphicon glyphicon-edit'></i></a></td>
 		</tr>

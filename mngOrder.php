@@ -9,7 +9,7 @@ else if ($_SESSION['name'] !== 'Admin') {
   ?>
 
 <?php include "includes/top.php"; ?>
-<?php include "includes/nav.php"; ?>
+
 <?php if (isset($_GET["dltOrd"])) {
   echo "<div class='alert alert-success'>
     <strong>Order Record has been deleted!</strong>
@@ -38,6 +38,7 @@ echo "<div class='col-xs-12 col-md-10' id='status' style='margin-top: 10px'><div
     <thead>
       <tr>
         <th>Reference Number</th>
+        <th>Customer Name</th>
         <th>Item</th>
         <th>Quantity</th>
         <th>Status</th>
@@ -51,7 +52,7 @@ $sql = "SELECT * FROM order_items LEFT JOIN items ON (order_items.Item = items.i
 $result =  mysqli_query($conn,$sql);
 if (mysqli_num_rows($result) > 0) {
 	while ($row = mysqli_fetch_assoc($result)) {
-		echo "<tr><td>$row[Ref_Number]</td><td>$row[product_name]</td><td>$row[Quantity]</td><td>$row[Status]</td>
+		echo "<tr><td>$row[Ref_Number]</td><td>$row[Customer_Name]</td><td>$row[product_name]</td><td>$row[Quantity]</td><td>$row[Status]</td>
 		<td><a  href='action/cancelOrder.php?OrdItemId=$row[ordItemId]' class='btn btn-danger' onclick='return confirm(\"Do you want to cancel this order?\");'>Cancel Order/Delete Record</a>
 		<a  href='action/tranOrder.php?OrdItemId=$row[ordItemId]' class='btn btn-info'>Set In Transit</a>
 		<a  href='action/deliverOrder.php?OrdItemId=$row[ordItemId]' class='btn btn-success'>Set Delivered</a>

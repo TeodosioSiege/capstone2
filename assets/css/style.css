@@ -7,11 +7,22 @@
  	/*color: hsl(350, 70%, 90%);*/
  	color: hsl(55, 75%, 85%) !important;
  }
+.list-group-item {
+  background-color: black !important;
+}
 
 .thumbnail img {
 	width: 350px !important;
 	height: 250px !important;
 	object-fit: contain;
+}
+
+.alert strong {
+  color: #333 !important;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: black !important;
 }
 
 body>p, button#close {
@@ -31,13 +42,11 @@ h2, strong {
 body {
 	background-color: hsl(350, 70%, 20%);
 	color: hsl(350, 70%, 90%);
+  height: 100% !important;
   }
 
-footer {
-	position: absolute;
-	bottom: 1;
-	 width: 100%;
-	  }
+
+
 
 footer>p {
  text-align: center;
@@ -86,7 +95,8 @@ form label {
 
  /* tab buttons */
 .btn-primary {
-	background-color: hsl(350, 70%, 20%) !important;
+	background-color: hsl(350, 70%, 40%) !important;
+  border-color: hsl(350, 70%, 40%) !important;
 }
 
 input {
@@ -291,4 +301,26 @@ h1 {
     -webkit-transition: none !important;
     transition: none !important;
   }
+}
+
+input, textarea, select, option {
+  color: black !important;
+}
+
+.modal-footer {
+  background-color: black;
+}
+
+#wrapper{
+  min-height: 100% !important;
+}
+
+.inner-wrapper {
+  padding: 20px;
+  padding-bottom: 130px;
+}
+
+.footer {
+  height: 50px;
+  margin-top: -100px;
 }

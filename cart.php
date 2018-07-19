@@ -15,7 +15,7 @@ if ($_SESSION['item_count'] == 0) {
 
  ?>
 <?php include "includes/top.php"; ?>
-<?php include "includes/nav.php"; ?>
+
 
 <!-- Modal -->
 <div id="myModal2" class="modal fade" role="dialog">
@@ -43,7 +43,7 @@ if ($_SESSION['item_count'] == 0) {
         </div>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-default">Confirm</button>
+        <button type="submit" class="btn btn-primary">Confirm</button>
       </div>
      </form>
     </div>

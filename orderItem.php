@@ -1,9 +1,9 @@
 <?php session_start(); ?>
 
 <?php include "includes/top.php"; ?>
-<?php include "includes/nav.php"; ?>
 
-<div class="container-fluid">
+
+
 
 <?php  
 $id = $_GET['id'];	
@@ -13,7 +13,7 @@ if (isset($_GET["cancel"])) {
 		<strong>Cancellation Request Submitted!</strong>
 	</div>";
 }
-echo "<h1>$name-$id</h1>";
+echo "<h2>$name</h2>";
 echo "<div class='container'><table class='table table-striped table-responsive'>
     <thead>
       <tr>
@@ -29,12 +29,13 @@ echo "<div class='container'><table class='table table-striped table-responsive'
 
 include "includes/db_config.php";
 
-$sql = "SELECT * FROM order_items LEFT JOIN items ON (order_items.Item = items.id) WHERE Order_Number = $id ";
+$sql = "SELECT * FROM order_items LEFT JOIN items ON (order_items.Item = items.id) WHERE order_items.Order_Number = $id ";
 
 $result =  mysqli_query($conn,$sql);
 
 			$grand_total = 0;
 if (mysqli_num_rows($result) > 0) {
+  
 	while ($row = mysqli_fetch_assoc($result)) {
 		//echo "$row[product_name]<br>";
 			$subTotal = $row['Quantity'] * $row['price'];
@@ -50,5 +51,5 @@ echo "</tbody></table>
               <hr>";	
 ?>
 
-</div><!-- end container-fluid -->
+
 <?php include "includes/bottom.php"; ?>

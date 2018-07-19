@@ -17,7 +17,7 @@ if(!isset($_SESSION["role"])){
 ?>
 
 <?php include "includes/top.php"; ?>
-<?php include "includes/nav.php"; ?>
+
 <?php 
 if (isset($_GET["pswX"])) {
 	echo "<div class='alert alert-danger'>
@@ -51,7 +51,7 @@ if (isset($_GET["logX"])) {
 	</div>";
 } ?>
 
-<div class="container-fluid">
+
 
 <div class="accordion">
   <ul>
@@ -157,20 +157,7 @@ if (mysqli_num_rows($result) > 0) {
  ?>
 </div><!-- end col-md-10 --> 
 </div><!-- end row --> 
-</div><!-- end container -->
-<!-- end  --> 
-<script>
-$(document).ready(function(){
-    if (window.matchMedia("(min-width: 600px)").matches){
-    	$("#catNames").hide();
-    }
-    if (window.matchMedia("(max-width: 599px)").matches){
-    	$(".accordion").hide();
-    	$("#products").css("margin-top","5px");
-    }
-});	
 
-</script>
 
 <?php include "includes/bottom.php"; ?>
 

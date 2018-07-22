@@ -41,7 +41,7 @@ if (mysqli_num_rows($result) > 0) {
 			$subTotal = $row['Quantity'] * $row['price'];
 			$grand_total += $subTotal;
 			$id = $_GET['id'];	
-			echo "<tr><td>$row[product_name]</td><td>$row[price] </td><td id=quantity$row[id]>$row[Quantity]</td><td>$subTotal</td><td>$row[Status]</td><td><a href='#'class='btn btn-info'  onclick=\"quantity($row[id],$row[Quantity],$id,'$name')\"><i class='glyphicon glyphicon-edit'></i></a><a  href='action/cancelRequest.php?Order_Number=$id&item=$row[id]&name=$name' class='btn btn-danger'>Cancel Order</a></td></tr>";
+			echo "<tr><td>$row[product_name]</td><td>$row[price] </td><td id=quantity$row[id]>$row[Quantity]</td><td>$subTotal</td><td>$row[Status]</td><td><a href='#'class='btn btn-info'  onclick=\"quantity($row[id],$row[Quantity],$id,'$name')\"><i class='glyphicon glyphicon-edit'></i></a><a  href='action/cancelRequest.php?Order_Number=$id&item=$row[id]&name=$name' class='btn btn-danger' onclick='return confirm(\"Are you sure?\");'>Cancel Order</a></td></tr>";
 	}
 }
 

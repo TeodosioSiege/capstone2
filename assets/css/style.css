@@ -10,6 +10,20 @@
 .list-group-item {
   background-color: black !important;
 }
+html{
+  min-height: 100% !important;
+  } 
+  body {
+  position: relative;
+  min-height: 100vh !important;
+}
+
+footer {
+  height: 60px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
 
 .thumbnail img {
 	width: 350px !important;
@@ -320,7 +334,3 @@ input, textarea, select, option {
   padding-bottom: 130px;
 }
 
-.footer {
-  height: 50px;
-  margin-top: -100px;
-}

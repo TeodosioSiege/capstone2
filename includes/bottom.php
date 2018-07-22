@@ -2,7 +2,7 @@
 </div><!-- end container -->
 
 
-<footer class="">
+<footer>
 	<p>&copy; Siege Teodosio</p>
 </footer>
 

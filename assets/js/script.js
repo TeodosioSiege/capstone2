@@ -87,7 +87,7 @@ function removeFromCart(id) {
 
 function quantity(item,quantity,orderId,name) {
     $("#quantity"+item).html("<td><form action='action/update_quantity.php' method='POST'><input type='number' name='quantity' placeholder='"
-        +quantity+"'>"+"<input type='number' name='orderNumber' value='"+orderId+"' hidden>"+
+        +quantity+"'min='1'>"+"<input type='number' name='orderNumber' value='"+orderId+"' hidden>"+
         "<input type='text' name='item' value='"+item+"' hidden>"+
         "<input type='text' name='name' value='"+name+"' hidden>"+
         " <button class='btn btn-success'>Submit Update</button></form></td>");
